@@ -55,5 +55,5 @@ A comprehensive, professional ID card management system built with Python and Py
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/federal-university-dutse/id-card-system.git
+   git clone https://github.com/federal-university-dutse/id-card-system
    cd id-card-system
