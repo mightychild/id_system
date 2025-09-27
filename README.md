@@ -20,13 +20,13 @@ A comprehensive, professional ID card management system built with Python and Py
 - **Data Encryption** - Secure student information storage
 - **Audit Logging** - Track all system activities
 
-### 🎨 User Experience
+###  User Experience
 - **Modern UI/UX** - Professional, intuitive interface
 - **Real-time Previews** - Instant ID card previews
 - **Responsive Design** - Adapts to different screen sizes
 - **Dark/Light Themes** - Comfortable viewing experience
 
-## 📸 System Preview
+##  System Preview
 
 ### Login Interface
 ![Login Screen](docs/screenshots/login.png)
@@ -40,7 +40,7 @@ A comprehensive, professional ID card management system built with Python and Py
 ### Generated ID Card Example
 ![ID Card](docs/screenshots/id-card.png)
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
