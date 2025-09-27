@@ -120,7 +120,7 @@ class LoadingScreen(QSplashScreen):
         
         if not logo_loaded:
             # Create a text-based logo fallback
-            self.logo_label.setText("🎓 UNIVERSITY")
+            self.logo_label.setText("UNIVERSITY")
             self.logo_label.setStyleSheet("""
                 QLabel {
                     font-size: 32px;

@@ -312,21 +312,6 @@ class LoginWindow(QMainWindow):
         self.login_btn.clicked.connect(self.handle_login)
         layout.addWidget(self.login_btn)
         
-        # Demo credentials
-        # demo_label = QLabel("Demo Credentials: admin / admin123")
-        # demo_label.setStyleSheet("""
-        #     QLabel {
-        #         color: #95a5a6;
-        #         font-size: 12px;
-        #         text-align: center;
-        #         margin-top: 15px;
-        #         padding: 10px;
-        #         background: #f8f9fa;
-        #         border-radius: 5px;
-        #     }
-        # """)
-        # demo_label.setAlignment(Qt.AlignCenter)
-        # layout.addWidget(demo_label)
         
         # Forgot password
         forgot_label = QLabel("<a href='#' style='color: #3498db; text-decoration: none;'>Forgot Password?</a>")
@@ -423,7 +408,7 @@ class LoginWindow(QMainWindow):
         
         # Re-enable login button
         self.login_btn.setEnabled(True)
-        self.login_btn.setText("🚀 Login to Dashboard")
+        self.login_btn.setText("Login to Dashboard")
     
     def login_success(self):
         """Handle successful login"""
