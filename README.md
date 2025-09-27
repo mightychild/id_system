@@ -1,4 +1,4 @@
-# 🎓 ID Card Management System - Federal University Dutse
+# ID Card Management System - Federal University Dutse
 
 A comprehensive, professional ID card management system built with Python and PyQt5 for Federal University Dutse. This system streamlines student registration, ID card generation, and management with a modern, user-friendly interface.
 
@@ -8,14 +8,14 @@ A comprehensive, professional ID card management system built with Python and Py
 
 ## ✨ Features
 
-### 🎯 Core Functionality
+### Core Functionality
 - **Student Registration & Management** - Complete student database with photo upload
 - **Professional ID Card Generation** - Automated ID card creation with QR codes
 - **Batch Processing** - Generate ID cards for multiple students simultaneously
 - **Digital Gallery** - Browse and manage all generated ID cards
 - **Print Ready** - High-quality output suitable for professional printing
 
-### 🛡️ Security & Authentication
+### Security & Authentication
 - **Secure Login System** - Role-based access control
 - **Data Encryption** - Secure student information storage
 - **Audit Logging** - Track all system activities
