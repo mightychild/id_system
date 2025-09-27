@@ -67,7 +67,7 @@ class IDCardGallery(QWidget):
         """)
         refresh_btn.clicked.connect(self.load_id_cards)
         
-        generate_all_btn = QPushButton("🎨 Generate Missing IDs")
+        generate_all_btn = QPushButton("Generate Missing IDs")
         generate_all_btn.setStyleSheet("""
             QPushButton {
                 background: #27ae60;
@@ -226,7 +226,7 @@ class IDCardGallery(QWidget):
             preview_label.setStyleSheet("color: #95a5a6; font-size: 12px; background: #f8f9fa;")
         
         # Photo indicator
-        photo_indicator = QLabel("📷 Has Photo" if card_data['has_photo'] else "❌ No Photo")
+        photo_indicator = QLabel("Has Photo" if card_data['has_photo'] else "No Photo")
         photo_indicator.setStyleSheet("font-size: 11px; color: #7f8c8d;")
         photo_indicator.setAlignment(Qt.AlignCenter)
         
@@ -357,7 +357,7 @@ class IDCardGallery(QWidget):
             output_path, message = generate_student_id_card(card_data['student_id'])
             if output_path:
                 QMessageBox.information(self, "Success", 
-                                      f"✅ ID card regenerated for {card_data['full_name']}!")
+                                      f"ID card regenerated for {card_data['full_name']}!")
                 self.load_id_cards()
             else:
                 QMessageBox.critical(self, "Error", 
@@ -391,7 +391,7 @@ class IDCardGallery(QWidget):
             QMessageBox.information(
                 self,
                 "Generation Complete",
-                f"✅ Generated {success_count} out of {len(missing_ids)} missing ID cards!"
+                f"Generated {success_count} out of {len(missing_ids)} missing ID cards!"
             )
             self.load_id_cards()
     
