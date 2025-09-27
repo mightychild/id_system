@@ -33,14 +33,14 @@ def main():
     sys.excepthook = handle_exception
     
     # Initialize database
-    print("🚀 Starting ID Card System...")
-    print("📊 Initializing database...")
+    print("Starting ID Card System...")
+    print("Initializing database...")
     
     try:
         init_db()
-        print("✅ Database initialization completed")
+        print("Database initialization completed")
     except Exception as e:
-        print(f"❌ Database initialization failed: {e}")
+        print(f"Database initialization failed: {e}")
         QMessageBox.critical(None, "Database Error", 
                            f"Failed to initialize database:\n\n{str(e)}")
         return 1
@@ -63,12 +63,12 @@ def main():
         window = LoginWindow()
         window.show()
         
-        print("✅ System ready! Login with: admin / admin123")
+        print("System ready! Login with: admin / admin123")
         
         return app.exec_()
         
     except Exception as e:
-        print(f"❌ Application startup failed: {e}")
+        print(f"Application startup failed: {e}")
         QMessageBox.critical(None, "Startup Error", 
                            f"Failed to start application:\n\n{str(e)}")
         return 1
