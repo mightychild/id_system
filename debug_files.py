@@ -26,10 +26,10 @@ if login_window_exists:
         # Add current directory to path explicitly
         sys.path.insert(0, current_dir)
         from login_window import LoginWindow
-        print("✅ SUCCESS: login_window imported successfully!")
+        print("SUCCESS: login_window imported successfully!")
     except ImportError as e:
-        print(f"❌ FAILED: {e}")
+        print(f"FAILED: {e}")
         import traceback
         traceback.print_exc()
 else:
-    print("\n❌ login_window.py not found in directory!")
+    print("\n login_window.py not found in directory!")
