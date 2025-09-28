@@ -69,7 +69,7 @@ class StudentRegistrationDialog(QDialog):
         scroll_area.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         main_layout.addWidget(scroll_area)
         
-        # Fixed buttons section at bottom (always visible)
+        # Buttons section at bottom (always visible)
         buttons_group = self.create_buttons_section()
         main_layout.addWidget(buttons_group)
         
@@ -168,9 +168,6 @@ class StudentRegistrationDialog(QDialog):
         self.program_input = QComboBox()
         self.program_input.addItems([
             "BSc Software Engineering",
-            "MSc Software Engineering", 
-            "PhD Software Engineering",
-            "Software Engineering Diploma"
         ])
         self.program_input.setMinimumHeight(35)
         
@@ -258,7 +255,7 @@ class StudentRegistrationDialog(QDialog):
         
         # Photo requirements
         requirements = QLabel(
-            "📋 Photo Requirements:\n"
+            "Photo Requirements:\n"
             "• Recent passport-sized photo (2x2 inches)\n"
             "• Clear front view of face\n" 
             "• Plain background\n"
@@ -282,7 +279,7 @@ class StudentRegistrationDialog(QDialog):
         layout.setContentsMargins(20, 10, 20, 10)
         
         # Cancel button
-        cancel_btn = QPushButton("❌ Cancel")
+        cancel_btn = QPushButton("Cancel")
         cancel_btn.setFixedSize(120, 40)
         cancel_btn.setStyleSheet("""
             QPushButton {
@@ -299,7 +296,7 @@ class StudentRegistrationDialog(QDialog):
         cancel_btn.clicked.connect(self.reject)
         
         # Save button
-        save_text = "💾 Update Student" if self.student_id else "✅ Register Student"
+        save_text = "Update Student" if self.student_id else "Register Student"
         self.save_btn = QPushButton(save_text)
         self.save_btn.setFixedSize(150, 45)
         self.save_btn.setStyleSheet("""
@@ -494,7 +491,7 @@ class StudentRegistrationDialog(QDialog):
             print(f"DEBUG: Photo path available: {self.photo_path is not None}")
             print(f"DEBUG: Photo path value: {self.photo_path}")
             
-            # Handle photo - FIXED: Check if photo_path is set and file exists
+            # Handle photo - Check if photo_path is set and file exists
             photo_saved = False
             if self.photo_path and os.path.exists(self.photo_path):
                 print(f"DEBUG: Photo found at: {self.photo_path}")
@@ -530,9 +527,9 @@ class StudentRegistrationDialog(QDialog):
             if success:
                 # Show appropriate success message
                 if photo_saved:
-                    message = f"✅ Student {action} successfully!\n\nName: {student_data['full_name']}\nStudent ID: {student_data['student_id']}\nPhoto: ✅ Saved successfully"
+                    message = f"Student {action} successfully!\n\nName: {student_data['full_name']}\nStudent ID: {student_data['student_id']}\nPhoto: ✅ Saved successfully"
                 else:
-                    message = f"✅ Student {action} successfully!\n\nName: {student_data['full_name']}\nStudent ID: {student_data['student_id']}\nPhoto: ⚠️ No photo saved"
+                    message = f"Student {action} successfully!\n\nName: {student_data['full_name']}\nStudent ID: {student_data['student_id']}\nPhoto: ⚠️ No photo saved"
                 
                 QMessageBox.information(self, "Success", message)
                 print(f"DEBUG: Student {action} successfully")
@@ -559,7 +556,7 @@ class StudentRegistrationDialog(QDialog):
                 print(f"ERROR: Source photo doesn't exist: {source_photo_path}")
                 return None
             
-            # Validate it's an image file using PIL if available
+            # Validate it's an image file using PIL
             try:
                 from PIL import Image
                 with Image.open(source_photo_path) as img:
@@ -606,7 +603,7 @@ class StudentRegistrationDialog(QDialog):
                     
                     # Verify the copied file is readable
                     try:
-                        if 'Image' in globals():  # If PIL is available
+                        if 'Image' in globals():
                             with Image.open(dest_path) as verify_img:
                                 verify_img.verify()
                             print("DEBUG: Copied photo verified as valid image")
