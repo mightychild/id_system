@@ -8,8 +8,8 @@ from config import GENERATED_CARDS_DIR, STUDENT_PHOTOS_DIR, LOGO_PATHS
 class IDCardGenerator:
     def __init__(self):
         # Standard ID card dimensions in portrait orientation
-        self.card_width = 440   # Reduced width
-        self.card_height = 935  # Increased height
+        self.card_width = 440   # ID Card width
+        self.card_height = 935  # ID Card height
         self.photo_size = 140   # Photo size
         self.qr_size = 90       # QR code size
         self.logo_size = (50, 50)
@@ -46,6 +46,7 @@ class IDCardGenerator:
             front_only_path = output_path.replace('.png', '_front.png')
             front_card_resized.save(front_only_path, 'PNG', quality=95)
             
+            
             # Mark as generated in database
             mark_id_card_generated(student_data['student_id'], output_path, 
                                  self.generate_qr_data(student_data))
@@ -79,7 +80,7 @@ class IDCardGenerator:
             info_font = ImageFont.load_default()
             small_font = ImageFont.load_default()
         
-        # Draw professional background
+        # Draw background
         self.draw_portrait_front_background(draw, content_height)
         
         # Add university logo
@@ -127,7 +128,7 @@ class IDCardGenerator:
             content_font = ImageFont.load_default()
             small_font = ImageFont.load_default()
         
-        # Draw professional back background
+        # Draw back background
         self.draw_portrait_back_background(draw, content_height)
         
         # Add header
@@ -245,7 +246,7 @@ class IDCardGenerator:
         draw.rounded_rectangle([photo_x, photo_y, photo_x+self.photo_size, photo_y+self.photo_size], 
                              radius=8, outline=(80, 80, 80), width=2, fill=(250, 250, 250))
         
-        # Try to load actual student photo - FIXED: Handle safe filenames
+        # Try to load actual student photo 
         photo_path = student_data.get('photo_path')
         if photo_path:
             # Handle both original and safe filenames
@@ -338,7 +339,7 @@ class IDCardGenerator:
         
         for word in words[1:]:
             test_line = current_line + " " + word
-            # Simple width estimation
+            # Width estimation
             test_width = len(test_line) * 7  
             if test_width <= max_width:
                 current_line = test_line
@@ -362,7 +363,7 @@ class IDCardGenerator:
                  fill=(100, 100, 100), font=font, anchor="mm")
         
         # Issue date
-        issued_date = datetime.now().strftime('%d/%m/%Y')
+        issued_date = datetime.now().strftime('%m/%Y')
         draw.text((self.card_width//2, height - 20), f"Issued: {issued_date}", 
                  fill=(150, 150, 150), font=font, anchor="mm")
     
